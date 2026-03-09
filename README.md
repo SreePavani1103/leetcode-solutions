@@ -1,6 +1,12 @@
-# leetcode
-<!---LeetCode Topics Start-->
-# LeetCode Topics
+# LeetCode Solutions
+
+This repository contains my solutions to LeetCode problems.
+
+- Total Problems Solved: 250+
+- Languages: C++, Java, Python
+- Focus: Data Structures and Algorithms
+
+Below are categorized solutions to different LeetCode topics.
 ## Math
 |  |
 | ------- |
