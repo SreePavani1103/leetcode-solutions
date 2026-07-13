@@ -22,9 +22,6 @@ public:
             k--;
            }
         }
-        if(k!=0 || l!=0)
-        return false;
-        else
-        return true;
+        return k==0 && l==0;
     }
 };
