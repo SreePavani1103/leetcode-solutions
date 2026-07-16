@@ -6,14 +6,20 @@ public:
        string s1;
         for(int i=0;i<n;i++)
         {
-            s1+=to_string(nums[i]);
-        }
-        for(int i=0;i<s1.size();i++)
-        {
-            if(s1[i]==digit+'0')
+           int num=nums[i];
+           if(num==0 && digit==0)
+           {
+            c++;
+           }
+           while(num>0)
+           {
+            if(num%10==digit)
             {
                 c++;
             }
+            num=num/10;
+           }
+
         }
         return c;
     }
