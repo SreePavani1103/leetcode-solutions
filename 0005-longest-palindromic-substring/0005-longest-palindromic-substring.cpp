@@ -12,8 +12,11 @@ int pallength(string s,int l,int r)
     string longestPalindrome(string s) {
         int st=0;
         int m=0;
-        for(int i=0;i<s.size();i++)
+        int n=s.size();
+        for(int i=0;i<n;i++)
         {
+            if((n-i)*2<=m)
+            break;
             int n1=pallength(s,i,i);
             int n2=pallength(s,i,i+1);
             int n=max(n1,n2);
