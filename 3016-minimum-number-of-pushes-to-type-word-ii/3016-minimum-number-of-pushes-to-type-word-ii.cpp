@@ -2,7 +2,7 @@ class Solution {
 public:
     int minimumPushes(string word) {
         int n=word.size();
-       map<char,int>a;
+       unordered_map<char,int>a;
        for(int i=0;i<n;i++)
        {
         a[word[i]]++;
