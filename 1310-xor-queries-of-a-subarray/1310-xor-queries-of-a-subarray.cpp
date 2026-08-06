@@ -1,20 +1,24 @@
 class Solution {
 public:
-int product( vector<int>& a,int l ,int r)
-{
-    int k=a[l];
-    for(int i=l+1;i<=r;i++)
-    {
-        k^=a[i];
-    }
-    return k;
-}
     vector<int> xorQueries(vector<int>& arr, vector<vector<int>>& queries) {
-        vector<int>v;
+        vector<int>p(arr.size());
+        p[0]=arr[0];
+        for(int i=1;i<arr.size();i++)
+        {
+            p[i]=p[i-1]^arr[i];
+        }
+        vector<int>v1;
         for(int i=0;i<queries.size();i++)
         {
-            v.push_back(product(arr,queries[i][0],queries[i][1]));
-        }     
-        return v;   
+            int l=queries[i][0];
+            int r=queries[i][1];
+            if(l==0)
+            {
+                v1.push_back(p[r]);
+            }
+            else
+            v1.push_back(p[r]^p[l-1]);
+        }
+        return v1;
     }
 };
