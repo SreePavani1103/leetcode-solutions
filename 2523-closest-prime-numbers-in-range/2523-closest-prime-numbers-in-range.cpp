@@ -18,34 +18,26 @@ void see()
 public:
     vector<int> closestPrimes(int left, int right) {
         see();
-        vector<int>v;
+        vector<int>a={-1,-1};
+        int p=-1;
+        int md=INT_MAX;
         for(int i=left;i<=right;i++)
         {
-            if(f[i])
+           if(f[i])
+           {
+            if(p!=-1)
             {
-                v.push_back(i);
+                int d=i-p;
+                if(d<md)
+                {
+                    md=d;
+                    a={p,i};
+                }
             }
+            p=i;
+           }
         }
-        if(v.size()<2)
-        {
-            return {-1,-1};
-        }
-        for( int i=0;i<v.size();i++)
-        {
-            cout<<v[i];
-        }
-        vector<int>a={-1,-1};
-        int m=INT_MAX;
-        for(int i=1;i<v.size();i++)
-        {
-            int d=v[i]-v[i-1];
-            if(d<m)
-            {
-                m=d;
-                a[0]=v[i-1];
-                a[1]=v[i];
-            }
-        }
+
         return a;
     }
 };
