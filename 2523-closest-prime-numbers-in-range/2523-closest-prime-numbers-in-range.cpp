@@ -1,7 +1,7 @@
 int t=1e6+1;
 vector<bool>f(t,true);
 class Solution {
-void see()
+bool see()
 {
     f[0]=f[1]=false;
     for(int i=2;i*i<=t;i++)
@@ -14,10 +14,12 @@ void see()
             }
         }
     }
+    return true;
 }
+bool k = see();
 public:
     vector<int> closestPrimes(int left, int right) {
-        see();
+       // see();
         vector<int>a={-1,-1};
         int p=-1;
         int md=INT_MAX;
