@@ -1,6 +1,5 @@
 int t=1e6+1;
 vector<bool>f(t,true);
-class Solution {
 bool see()
 {
     f[0]=f[1]=false;
@@ -17,6 +16,7 @@ bool see()
     return true;
 }
 bool k = see();
+class Solution {
 public:
     vector<int> closestPrimes(int left, int right) {
        // see();
@@ -35,6 +35,8 @@ public:
                     md=d;
                     a={p,i};
                 }
+                if(d==2)
+                return a;
             }
             p=i;
            }
