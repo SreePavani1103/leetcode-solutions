@@ -1,29 +1,23 @@
-int t=1e6+7;
-vector<bool>k(t,true);
-bool prime()
+
+bool prime(int n)
 {
-    k[0]=false;
-    k[1]=false;
-    for(int i=2;i*i<t;i++)
+    if(n<=1)
+    return false;
+    for(int i=2;i*i<=n;i++)
     {
-        if(k[i]){
-        for(int j=i*i;j<t;j+=i)
-        {
-           k[j]=false;
-        }
-        }
-      
+        if(n%i==0)
+        return false;
     }
       return true;
 }
-bool s=prime();
+
 class Solution {
 public:
     int maximumPrimeDifference(vector<int>& nums) {
         int j=0,l=0;
         for(int i=0;i<nums.size();i++)
         {
-            if(k[nums[i]])
+            if(prime(nums[i]))
             {
                 j=i;
                 break;
@@ -31,7 +25,7 @@ public:
         }
         for(int i=nums.size()-1;i>=0;i--)
         {
-            if(k[nums[i]])
+            if(prime(nums[i]))
             {
                 l=i;
                 break;
